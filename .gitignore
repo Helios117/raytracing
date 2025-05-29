@@ -1,0 +1,5 @@
+.vscode/
+*.ppm
+*.dSYM
+CMakeLists.txt
+build/
