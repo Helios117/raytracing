@@ -72,5 +72,5 @@ int main() {
     cam.render(world);
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<seconds>(stop - start);
-    std::clog << std::flush << ">>>" << duration.count() << std::endl;
+    std::clog << std::flush << "Duration = " << duration.count() << " seconds." << std::endl;
 }
