@@ -126,7 +126,7 @@ void earth() {
 void perlin_spheres() {
     hittable_list world;
 
-    auto pertext = make_shared<noise_texture>();
+    auto pertext = make_shared<noise_texture>(4);
     world.add(make_shared<sphere>(point3(0,-1000,0), 1000, make_shared<lambertian>(pertext)));
     world.add(make_shared<sphere>(point3(0,2,0), 2, make_shared<lambertian>(pertext)));
 
@@ -148,6 +148,7 @@ void perlin_spheres() {
 }
 
 int main() {
+    auto start = high_resolution_clock::now();
     switch(4) {
         case 1:
             bouncing_spheres();
@@ -162,4 +163,7 @@ int main() {
             perlin_spheres();
             break;
     }
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<seconds>(stop - start);
+    std::clog << std::flush << "Duration = " << duration.count() << " seconds." << std::endl;
 }
