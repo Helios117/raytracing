@@ -69,11 +69,8 @@ void bouncing_spheres() {
 
     cam.defocus_angle = 0.6;
     cam.focus_dist    = 10.0;
-    auto start = high_resolution_clock::now();
+
     cam.render(world);
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<seconds>(stop - start);
-    std::clog << std::flush << "Duration = " << duration.count() << " seconds." << std::endl;
 }
 
 void checkered_spheres() {
